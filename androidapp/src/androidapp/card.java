@@ -10,5 +10,5 @@ package androidapp;
  * @author ReneshN
  */
 public class card {
-    
+    asdxzc
 }
