@@ -9,16 +9,14 @@ package androidapp;
  *
  * @author ReneshN
  */
-public class PlayingCard extends Card {
+public class CardContents {
 
     private String suit;
     private String rank;
 
-    public PlayingCard() {
-        super();
+    public CardContents() {
         suit = "";
         rank = "";
-        
     }
 
     public String getSuit() {
@@ -37,4 +35,18 @@ public class PlayingCard extends Card {
         this.rank = rank;
     }
 
+    public boolean equals(CardContents otherCardContents) {
+        if (otherCardContents.rank.equalsIgnoreCase(rank) && otherCardContents.suit.equalsIgnoreCase(suit)) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean equalRank(String rank) {
+        return this.rank.equalsIgnoreCase(rank);
+    }
+
+    public boolean equalSuit(String suit) {
+        return this.suit.equalsIgnoreCase(suit);
+    }
 }
