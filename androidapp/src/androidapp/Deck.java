@@ -5,50 +5,48 @@
  */
 package androidapp;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author ReneshN
  */
-public class Deck {
-    private ArrayList<PlayingCard> deckOfCards;
+public class Card {
 
-    public Deck() {
-        this.deckOfCards = new ArrayList<PlayingCard>();
-        
-    }
+    private boolean chosen;
+    private boolean matched;
+    private CardContents contents;
 
-    public Deck(int size) {
-        this.deckOfCards = new ArrayList<PlayingCard>(); 
+    public boolean equals(Card otherCard) {
+        return contents.equals(otherCard.getContents());
     }
 
-    public ArrayList<PlayingCard> getDeckOfCards() {
-        return deckOfCards;
+    public Card() {
+        chosen = false;
+        matched = false;
+        contents = new CardContents();
     }
 
-    public void setDeckOfCards(ArrayList<PlayingCard> deckOfCards) {
-        this.deckOfCards = deckOfCards;
+    public boolean isChosen() {
+        return chosen;
     }
 
-    public int getSize() {
-        return deckOfCards.size();
+    public void setChosen(boolean chosen) {
+        this.chosen = chosen;
     }
 
-    public void addCardToEnd(PlayingCard newCard){
-      deckOfCards.add(newCard);
+    public boolean isMatched() {
+        return matched;
     }
-    
-    public PlayingCard getCard(int index){
-        return deckOfCards.get(index);
+
+    public void setMatched(boolean matched) {
+        this.matched = matched;
     }
-    
-    public PlayingCard getRandomCard(){
-        int index = (int) (Math.random() * getSize());
-        return getCard(index);
+
+    public CardContents getContents() {
+        return contents;
     }
-    
-    
-    
-    
+
+    public void setContents(CardContents contents) {
+        this.contents = contents;
+    }
+
 }
