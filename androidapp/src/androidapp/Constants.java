@@ -44,6 +44,20 @@ public class Constants {
         }
         return "";
     }
+    
+    public CardContents getRandomRankAndSuit(){
+        CardContents content = new CardContents();
+        int randomInt = 0;
+        
+        randomInt =(int) (Math.random() * validRanks.length);
+        content.setRank(validRanks[randomInt]);
+       
+        randomInt =(int) (Math.random() * validSuits.length);
+        content.setSuit(validSuits[randomInt]);
+        
+        
+        return content; 
+    }
    
   
    
