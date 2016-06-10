@@ -10,15 +10,17 @@ package androidapp;
  * @author ReneshN
  */
 public class PlayingCard extends Card {
-private String suit;
-private String rank;
+
+    private String suit;
+    private String rank;
 
     public PlayingCard() {
         super();
         suit = "";
-        rank =""; 
+        rank = "";
+        
     }
-    
+
     public String getSuit() {
         return suit;
     }
@@ -34,7 +36,5 @@ private String rank;
     public void setRank(String rank) {
         this.rank = rank;
     }
-
-   
 
 }
