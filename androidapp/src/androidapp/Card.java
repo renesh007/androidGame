@@ -5,48 +5,50 @@
  */
 package androidapp;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ReneshN
  */
-public class Card {
+public class Deck {
+    private ArrayList<Card> deckOfCards;
 
-    private boolean chosen;
-    private boolean matched;
-    private String contents;
-
-    public boolean equals(Card otherCard) {
-        return contents.equalsIgnoreCase(otherCard.getContents());
+    public Deck() {
+        this.deckOfCards = new ArrayList<Card>();
+        
     }
 
-    public Card() {
-        chosen = false;
-        matched = false;
-        contents = "";
+    public Deck(int size) {
+        this.deckOfCards = new ArrayList<Card>(); 
     }
 
-    public boolean isChosen() {
-        return chosen;
+    public ArrayList<Card> getDeckOfCards() {
+        return deckOfCards;
     }
 
-    public void setChosen(boolean chosen) {
-        this.chosen = chosen;
+    public void setDeckOfCards(ArrayList<Card> deckOfCards) {
+        this.deckOfCards = deckOfCards;
     }
 
-    public boolean isMatched() {
-        return matched;
+    public int getSize() {
+        return deckOfCards.size();
     }
 
-    public void setMatched(boolean matched) {
-        this.matched = matched;
+    public void addCardToEnd(PlayingCard newCard){
+      deckOfCards.add(newCard);
     }
-
-    public String getContents() {
-        return contents;
+    
+    public Card getCard(int index){
+        return deckOfCards.get(index);
     }
-
-    public void setContents(String contents) {
-        this.contents = contents;
+    
+    public Card getRandomCard(){
+        int index = (int) (Math.random() * getSize());
+        return getCard(index);
     }
-
+    
+    
+    
+    
 }
